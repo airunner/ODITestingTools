@@ -7,3 +7,6 @@ label {
 	color: green;
 	display:none;
 }
+.warning {
+	color: yellow;
+}
