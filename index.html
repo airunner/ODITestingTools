@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <meta charset="UTF-8">
+    <title>Data Stage/ODI to SQL Converter</title>
+  </head>
+  <body>
+    <h1>ODI/DS to SQL Converter</h1>
+    <textarea id='sql' rows="20" cols='100'></textarea><br>
+    <button type="button" id='convert'>Convert</button>
+    <button type="button" id='clear'>Clear</button>
+    <div id='notification'>The code has been converted and copied to your clipboard.</div>
+    <div id="dsWarn">
+      <p>* Remeber to filter out discontinues i.e. where (ss_operation/sn_operation) <> 'D' </p>
+    </div>
+      <p>* Term list is currently hard coded. Last updated 4/6/18</p>
+    <hr>
+
+    <h1>Rollback Type 2 Dimension Execution</h1>
+    <p>*Might need to use trunc(LV_START_DATE) if previous query returns a date with a time.</p>
+    <label for="table">Table:</label>
+    <input id="table"><br>
+    <button type="button" id='submit'>Submit</button>
+    <button type="button" id='clear2'>Clear</button><br><hr>
+    <textarea id='sqlUndo' rows="16" cols='100'></textarea><br>
+    <div id='notification2'>The code has been copied to your clipboard.</div>
+  </body>
+</html>
