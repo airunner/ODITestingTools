@@ -10,3 +10,9 @@ label {
 .warning {
 	color: yellow;
 }
+button {
+	margin-top: 5px;
+}
+.ui-button,  .ui-button-text .ui-button {
+	font-size: 14px !important; 
+}

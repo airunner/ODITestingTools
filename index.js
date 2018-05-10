@@ -68,6 +68,8 @@ END;`;
   return code;
 }
 $(function(){
+  $("button").button();
+
   $("#dsWarn").hide();
   $("#convert").click(function() {
     var type = "none";
@@ -119,3 +121,29 @@ $(function(){
       $("#notification2").fadeIn('fast').delay(5000).fadeOut('slow');
   });
 });
+/* for future development commonly used queries
+--TABLENAME is case sensitive
+SELECT LISTAGG (COLUMN_NAME, ', ') WITHIN GROUP (ORDER BY COLUMN_ID)
+FROM USER_TAB_COLS WHERE TABLE_NAME = 'TABLENAME';
+*/
+/*--Enable DBMS_OUTPUT.PUT_LINE
+set serveroutput on;
+*/
+/*
+--Get data from production while connected to development
+@lvepmprd2lvepmdev;--Add to end of table name
+*/
+/*
+--Load production values into development Table
+truncate table ${table};
+
+--delete from ${table};--If no truncate permissions
+
+insert into ${table}
+select * from ${table}@lvepmprd2lvepmdev;
+*/
+/*
+ODI code segments
+TO_DATE('#ST.V_LVRUNDATE','YYYY-MM-DD') between LV_START_DATE and LV_END_DATE
+STRM in (#ST.TERM_LIST)
+*/
